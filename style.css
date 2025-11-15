@@ -17,25 +17,45 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:10px;
-    background-image: url("https://i.pinimg.com/1200x/19/c2/59/19c25988b4ac708768cc9779d10af31d.jpg");
-    background-position: center;    
+    gap:30px;
+    background-image: url("https://i.pinimg.com/736x/a7/24/9c/a7249c6ba462bf1cbd0831bde3ccd3bb.jpg");
+    background-position: bottom;   
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+}
+
+.who h1{
+    font-size: 50px;
+    color: rgb(248, 248, 248);
 }
 .box{
-    width: 50%;
-    height: 50%;
-    background-color: rgb(20, 30, 160);
+    width: 30%;
+    height: 40%;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgba(223, 221, 221, 0.76);
 }
+
+
 
 
 .change{
     width: 130px;
-    height: 100px;
+    height: 50px;
     padding: 10px; 
     justify-content: center;
     align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.change:active{
+    scale: 0.95;
 }
 
 
