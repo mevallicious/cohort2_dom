@@ -12,32 +12,15 @@ body{
 
 main{
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: red;
     background-color: black;
-    gap:30px;
-    background-position: bottom;   
-    background-repeat: no-repeat;
-    background-size:cover;
-}
-
-.cursor{
-    position: absolute;
-    mix-blend-mode: difference;
-    background-color: red;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    transition: all linear 0.2s;
-}
-
-h1{
-    font-size: 170px;
+    overflow: hidden;
 }
 
 
@@ -45,11 +28,13 @@ h1{
 .change{
     width: 130px;
     height: 50px;
+    background-color: red;
+    font-size: 20px;
     padding: 10px; 
-    justify-content: center;
-    align-items: center;
     border: none;
     border-radius: 5px;
+    position: relative;
+    z-index: 9;
 }
 
 
