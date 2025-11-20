@@ -15,86 +15,52 @@ main{
     height: 100%;
     width: 100%;
     display: flex;
-    font-family: monospace;
-    /* flex-direction: column; */
+    font-family: sans-serif;
     justify-content: center;
     align-items: center;
-    
-    background-color: black;
+    background-color: royalblue;
     overflow: hidden;
 }
 
+i{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0) rotate(-60deg);
+    font-size: 100px;
+    background-image: url("https://img.freepik.com/free-vector/instagram-background-gradient-colors_23-2147819864.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    opacity: 0;
+    z-index: 0;
+    transition: all cubic-bezier(.64,1,.44,1.4) 0.2s;
+
+    color: transparent;
+    background-clip: text; 
+    -webkit-background-clip: text;
+}
+
 .box{
-    height: 250px;
-    width: 500px;
+    height: 500px;
+    width: 300px;
     background-color: white;
     border-radius: 10px;
-    padding: 20px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center
+    padding: 15px;
+    
 }
 
-.baby{
+.box div {
+    overflow: hidden;
+    position: relative;
+}
+.box img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.box h1{
     text-align: center;
 }
-
-span{
-    color: blue;
-}
-
-.outer{
-    /* margin-left: 5px; */
-    width: 95%; 
-    height:15px;
-    border-radius: 10px;
-    background: #8b8b8b;
-}
-
-.inner{
-    width: 0%;
-    height: 100%;
-    background-color: green;
-    border-radius: 10px;
-}
-
-.download{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.percent{
-    font-size: 60px;
-}
-
-
-
-
-.change{
-    width: 180px;
-    height: 50px;
-    background-color: green;
-    
-    font-size: 15px;
-    padding: 10px; 
-    border: none;
-    border-radius: 5px;
-    position: relative;
-    z-index: 9;
-}
-
-.change h1{
-    font-size: 23px;
-}
-
-.change:active{
-    scale: 0.95;
-}
-
 
 
 
