@@ -22,7 +22,62 @@ main{
     overflow: hidden;
 }
 
-i{
+
+.box{
+    height: 420px;
+    width: 350px;
+    background-color: black;
+    padding: 5px 0px;
+}
+
+.box .title{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    /* margin-bottom: 5px; */
+    padding: 10px 10px 10px 10px;
+}
+
+.box .title .pfp img{
+    height: 28px;
+    width: 28px;
+    margin-right: 7px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.box span{
+    color: rgb(0, 81, 255);
+    
+    display: flex;
+    align-items: center;
+}
+
+
+
+.box h2{
+    cursor: pointer;
+}
+
+.box .title h2{
+    font-size: 13px;
+}
+
+.box .love {
+    overflow: hidden;
+    position: relative;
+}
+.box .love img{
+    height:300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* margin-top: 20px;] */
+}
+
+.box i{
     position: absolute;
     top: 48%;
     left: 50%;
@@ -39,27 +94,33 @@ i{
     -webkit-background-clip: text;
 }
 
-.box{
-    height: 500px;
-    width: 300px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    
-}
-
-.box div {
-    overflow: hidden;
-    position: relative;
-}
-.box img{
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
 
 .box h1{
     text-align: center;
+}
+
+.com{
+    top: 75.5%;
+    position: absolute;
+    display: flex;
+    gap: 167px;
+    align-items: center;
+    justify-content: center;
+}
+
+.like{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+   
+}
+
+.com i{
+    font-size: 30px;
+    color: white;
+    fill: white;
+    align-items: center;
 }
 
 
