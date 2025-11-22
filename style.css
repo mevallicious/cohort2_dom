@@ -12,116 +12,78 @@ body{
 
 main{
     position: relative;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    display: flex;
-    font-family: sans-serif;
+    cursor: none;
+    display: grid;
     justify-content: center;
     align-items: center;
-    background-color: royalblue;
-    overflow: hidden;
-}
-
-
-.box{
-    height: 420px;
-    width: 350px;
+    background-color: rgb(146, 151, 151);
     background-color: black;
-    padding: 5px 0px;
 }
 
-.box .title{
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    /* margin-bottom: 5px; */
-    padding: 10px 10px 10px 10px;
+#cursor{
+    height: 40px;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    z-index: 30;
 }
 
-.box .title .pfp img{
-    height: 28px;
-    width: 28px;
-    margin-right: 7px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
+.container{
+    width: max-content;
+    padding: 90px 40px 35px ;
+    border-radius: 20px;
+    background:#181717;
+}
+.pianokeys{
+    margin: 0;
+    padding: 0;
+    display: flex ;
+    list-style: none;
 }
 
-.box span{
-    color: rgb(0, 81, 255);
-    
-    display: flex;
-    align-items: center;
+.pianokeys .white{
+    height: 250px;
+    width: 70px;
+    border: 1px solid #000;
+    border-left: 1px solid #fff2;
+    border-bottom: 1px solid #bababa;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+
 }
 
-
-
-.box h2{
+.pianokeys .key{
     cursor: pointer;
-}
-
-.box .title h2{
-    font-size: 13px;
-}
-
-.box .love {
-    overflow: hidden;
     position: relative;
+    text-transform: uppercase;
 }
-.box .love img{
-    height:300px;
+
+.pianokeys .key span{
+    position: absolute;
+    bottom: 20px;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
-    /* margin-top: 20px;] */
-}
-
-.box i{
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0) rotate(-60deg);
-    font-size: 100px;
-    background-image: url("https://img.freepik.com/free-vector/instagram-background-gradient-colors_23-2147819864.jpg?semt=ais_hybrid&w=740&q=80");
-    background-size: cover;
-    opacity: 0;
-    z-index: 0;
-    transition: all cubic-bezier(.64,1,.44,1.4) 0.2s;
-
-    color: transparent;
-    background-clip: text; 
-    -webkit-background-clip: text;
-}
-
-
-.box h1{
+    font-size: 18px;
     text-align: center;
-}
-
-.com{
-    top: 75.5%;
-    position: absolute;
-    display: flex;
-    gap: 167px;
-    align-items: center;
-    justify-content: center;
-}
-
-.like{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    
-   
-}
-
-.com i{
-    font-size: 30px;
+    font-weight: 500;
     color: white;
-    fill: white;
-    align-items: center;
 }
+
+.pianokeys .white span{
+    color: #000;
+}
+
+.pianokeys  .black{
+    z-index: 2;
+    width: 44px;
+    height: 160px;
+    margin: 0 -22px  0 -22px;
+    border:1px solid #000;
+    border-radius: 0 0 3px 3px;
+    background: #000;
+
+}
+
 
 
 
