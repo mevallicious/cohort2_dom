@@ -1,53 +1,46 @@
-let cursor =document.querySelector("#cursor")
-let body =document.querySelector("body")
-let audio = new Audio()
+let arr=[
+  {name:"dark horse",img:"https://images.unsplash.com/photo-1536356953159-9043c2260bba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMGhvcnNlfGVufDB8fDB8fHww"},
+  {name:"gold fish",img:"https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvbGQlMjBmaXNofGVufDB8fDB8fHww"},
+  {name:"sea turtle",img:"https://plus.unsplash.com/premium_photo-1675432656807-216d786dd468?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhJTIwdHVydGxlfGVufDB8fDB8fHww "},
+  {name:"african lion",img:"https://plus.unsplash.com/premium_photo-1661962845905-879dbe49c086?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWZyaWNhbiUyMGxpb258ZW58MHx8MHx8fDA%3D"},
+  {name:"giraffe",img:"https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lyYWZmZXxlbnwwfHwwfHx8MA%3D%3D"}
+]
 
+function showthecards(){
+  let sum=''
+  arr.forEach(function(val){
+    sum+=`<div class="box">
+        <img class="cursor-pointer" src="${val.img}" alt="image">
+        <div class="caption">Lorem ipsum </div>
+    </div>`
+  })
 
-let keypiano = {
-  "1":"audio/1.mp3",
-  "2":"audio/2.mp3",
-  "3":"audio/3.mp3",
-  "4":"audio/4.mp3",
-  "5":"audio/5.mp3",
-  "6":"audio/6.mp3",
-  "7":"audio/7.mp3",
-  "8":"audio/8.mp3",
-  "9":"audio/9.mp3",
-  "0":"audio/10.mp3",
-  "a":"audio/a.mp3",
-  "b":"audio/b.mp3",
-  "c":"audio/c.mp3",
-  "d":"audio/d.mp3",
-  "e":"audio/e.mp3",
-  "f":"audio/f.mp3",
-  "g":"audio/g.mp3",
+  let container = document.querySelector(".container")
+  container.innerHTML=sum
 }
 
-body.addEventListener("mousemove",function(dets){
-  cursor.style.left = dets.x + 'px'
-  cursor.style.top = dets.y + 'px'
-})
+function search(){
+  input=document.querySelector("#searchinput")
+  input.addEventListener("focus",()=>{
+        document.querySelector(".overlay").style.display = "block"
+  })
+  input.addEventListener("blur",()=>{
+        document.querySelector(".overlay").style.display = "none"
+  })
 
-function playSound(key){
-  let sound = keypiano[key]
-  if (!sound) return
-
-  audio.src=sound 
-  audio.currentTime = 0
-  audio.play()
-  
-  console.log(keypiano[key])
+  input.addEventListener("input",()=>{
+    let filteredarray = arr.filter(val=>val.name.toLowerCase().startsWith(input.value))
+    let sum=''
+    filteredarray.forEach(function(val){
+      sum+= `<div class="res flex px-8 py-3">
+            <i class="ri-search-line font-semibold mr-5"></i>
+            <h3 class="font-semibold">${val.name}</h3>
+        </div>`
+    })
+     document.querySelector(".searchdata").style.display = "block"
+    document.querySelector(".searchdata").innerHTML=sum
+  })
 }
+search()
+showthecards()
 
-
-body.addEventListener("keydown",(val)=>{
-  let pressedKey = val.key.toLowerCase();
-let press = document.getElementById(pressedKey);
-
-  press.style.transform=`scale(0.9)`
-  setTimeout(() => {
-     press.style.transform=`scale(1)`
-  }, 100);
-  playSound(pressedKey)
-
-})
